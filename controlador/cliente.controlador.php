@@ -53,7 +53,7 @@ class ControladorClientes {
                             confirmButtonText: "Cerrar"
                             }).then(function(result){
                                   if (result.value) {
-                                      window.location = "index.php";
+                                      window.location = "../index.php";
                                   }
                               })
                     </script>';

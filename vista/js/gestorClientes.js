@@ -11,7 +11,7 @@ $.ajax({
  })
 */
 $(".tablaClientes").DataTable({
-    "ajax": "ajax/tablaCliente.ajax.php",
+    "ajax": "../ajax/tablaCliente.ajax.php",
     "deferRender": true,
     "retrieve": true,
     "processing": true,
@@ -56,7 +56,7 @@ $(".guardarCliente").click(function () {
         datosProducto.append("telefono", telefono);
 
         $.ajax({
-            url: "ajax/clientes.ajax.php",
+            url: "../ajax/clientes.ajax.php",
             method: "POST",
             data: datosProducto,
             cache: false,
@@ -72,7 +72,7 @@ $(".guardarCliente").click(function () {
                         confirmButtonText: "Cerrar"
                     }).then(function (result) {
                         if (result.value) {
-                            window.location = "";
+                            window.location = "../";
                         }
                     });
                 } else {
@@ -103,7 +103,7 @@ $(".tablaClientes tbody").on("click", ".btnEditarCliente", function(){
         datos.append("telefono", telefono);
 
 	$.ajax({
-		url:"ajax/clientes.ajax.php",
+		url:"../ajax/clientes.ajax.php",
 		method: "POST",
 		data: datos,
 		cache: false,
@@ -119,7 +119,7 @@ $(".tablaClientes tbody").on("click", ".btnEditarCliente", function(){
                         confirmButtonText: "Cerrar"
                     }).then(function (result) {
                         if (result.value) {
-                            window.location = "";
+                            window.location = "../";
                             limpiarFormulario();                            
                         }
                     });
@@ -151,7 +151,7 @@ $(".tablaClientes tbody").on("click", ".btnEliminarCliente", function () {
         confirmButtonText: 'Si, borrar cliente!'
     }).then(function (result) {
         if (result.value) {
-            window.location = "index.php?id="+idCliente;
+            window.location = "../index.php?id="+idCliente;
         }
     });
 });
