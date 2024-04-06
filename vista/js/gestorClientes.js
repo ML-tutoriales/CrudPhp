@@ -156,4 +156,47 @@ $(".tablaClientes tbody").on("click", ".btnEliminarCliente", function () {
     });
 });
 
+$(".imprimirCliente").click(function () {
+
+        var datos = new FormData();
+
+        $.ajax({
+            url: "../reporte/reporteCliente.php",
+            method: "POST",
+            data: datos,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (respuesta) {
+                console.log("respuesta", respuesta);
+                if (respuesta !== "") {
+                    window.open(respuesta, "_blank");
+                } 
+            }
+        });
+});
+
+$(".tablaClientes tbody").on("click", ".btnImprimirCliente", function(){
+
+	var idCliente = $(this).attr("id");
+
+	var datos = new FormData();
+	datos.append("id", idCliente);
+
+	$.ajax({
+		url:"../reporte/reporteCliente.php",
+		method: "POST",
+		data: datos,
+		cache: false,
+		contentType: false,
+		processData: false,
+		success: function(respuesta){
+                    console.log("respuesta", respuesta);
+                if (respuesta !== "") {
+                    window.open(respuesta, "_blank");
+                }
+            }
+        });			
+});
+
 

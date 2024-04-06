@@ -308,6 +308,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <br>
                       <button type="button" class="btn btn-primary guardarCliente">Guardar cliente</button>
                       <button type="button" class="btn btn-danger" id="btnnuevo" onclick="limpiarFormulario()">Nuevo</button>
+                      <button type="button" class="btn btn-primary imprimirCliente">Imprimir</button>
                       <br>
                       <table id="tblCliente" class="tablaClientes" width="100%">
                           <thead>            

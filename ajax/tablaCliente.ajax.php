@@ -18,7 +18,8 @@ class TablaClientes {
     for($i = 0; $i < count($cliente); $i++){
                  
     $acciones = "<button class='btnEditarCliente' id='".$cliente[$i]["id"]."'>Modificar</button>"
-               ."<button class='btnEliminarCliente' id='".$cliente[$i]["id"]."'>Eliminar</button>";
+               ."<button class='btnEliminarCliente' id='".$cliente[$i]["id"]."'>Eliminar</button>"
+            ."<button class='btnImprimirCliente' id='".$cliente[$i]["id"]."'>Imprimir</button>";
 
         $datosJson	 .= '[
                       "'.$cliente[$i]["id"].'",
